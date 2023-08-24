@@ -12,15 +12,11 @@ public static class EffectsControllerPatch
      public static bool Prefix(PlayerEffectsController __instance, ReferenceHub targetHub, PlayerRoleBase oldRole, PlayerRoleBase newRole)
      {
           if (targetHub != __instance._hub) return false;
-          if (oldRole.Team != Team.Dead && newRole.Team == Team.Dead && config.DeathDisablesEffects)
-          {
-               __instance.DisableAllEffects();
-               return false;
-          }
-
+          bool isDead = oldRole.Team != Team.Dead && newRole.Team == Team.Dead && config.DeathDisablesEffects;
           foreach (StatusEffectBase statusEffectBase in __instance.AllEffects)
           {
-               if (!config.AllowedEffects.Contains(statusEffectBase.GetEffectType())) statusEffectBase.DisableEffect();
+               if (isDead) statusEffectBase.OnDeath(oldRole);
+               else if (!config.AllowedEffects.Contains(statusEffectBase.GetEffectType())) statusEffectBase.OnRoleChanged(oldRole, newRole);
           }
           return false;
      }
