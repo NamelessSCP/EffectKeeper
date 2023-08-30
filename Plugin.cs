@@ -17,6 +17,7 @@ public class Plugin : Plugin<Config>
           Instance = this;
           try
           {
+               Log.Debug("Beginning patch");
                harmony = new Harmony("EffectKeeper");
                harmony.PatchAll();
           }
@@ -31,7 +32,7 @@ public class Plugin : Plugin<Config>
 
      public override void OnDisabled()
      {
-          Instance = null;
+          Instance = null!;
           harmony.UnpatchAll();
           base.OnDisabled();
      }

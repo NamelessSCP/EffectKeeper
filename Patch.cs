@@ -2,6 +2,7 @@ namespace EffectKeeper.Patches;
 
 using CustomPlayerEffects;
 using Exiled.API.Extensions;
+using Exiled.API.Features;
 using HarmonyLib;
 using PlayerRoles;
 
@@ -12,11 +13,12 @@ public static class EffectsControllerPatch
      public static bool Prefix(PlayerEffectsController __instance, ReferenceHub targetHub, PlayerRoleBase oldRole, PlayerRoleBase newRole)
      {
           if (targetHub != __instance._hub) return false;
-          bool isDead = oldRole.Team != Team.Dead && newRole.Team == Team.Dead && config.DeathDisablesEffects;
+          bool isDead = (oldRole.Team == Team.Dead || newRole.Team == Team.Dead) && config.DeathDisablesEffects;
+
           foreach (StatusEffectBase statusEffectBase in __instance.AllEffects)
           {
                if (isDead) statusEffectBase.OnDeath(oldRole);
-               else if (!config.AllowedEffects.Contains(statusEffectBase.GetEffectType())) statusEffectBase.OnRoleChanged(oldRole, newRole);
+               if (!config.AllowedEffects.Contains(statusEffectBase.GetEffectType())) statusEffectBase.OnRoleChanged(oldRole, newRole);
           }
           return false;
      }
