@@ -13,7 +13,7 @@ public static class EffectsControllerPatch
      public static bool Prefix(PlayerEffectsController __instance, ReferenceHub targetHub, PlayerRoleBase oldRole, PlayerRoleBase newRole)
      {
           if (targetHub != __instance._hub) return false;
-          bool isDead = newRole.Team == Team.Dead && config.DeathDisablesEffects;
+          bool isDead = oldRole.Team == Team.Dead && config.DeathDisablesEffects;
 
           foreach (StatusEffectBase statusEffectBase in __instance.AllEffects)
           {
