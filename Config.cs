@@ -15,11 +15,12 @@ public sealed class Config : IConfig
           EffectType.Invisible,
           EffectType.Scp1853
      };
+     [Description("A list of effect categories that cannot be removed from player")]
      public List<EffectCategory> AllowedCategories { get; set; } = new()
      {
           EffectCategory.Movement,
           EffectCategory.Positive
      };
-     [Description("Whether or not dying should disable all effects (overrides AllowedEffects)")]
+     [Description("Whether or not dying should disable all effects (overrides AllowedEffects/AllowedCategories)")]
      public bool DeathDisablesEffects { get; set; } = true;
 }
