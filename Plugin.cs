@@ -7,11 +7,10 @@ using HarmonyLib;
 public class Plugin : Plugin<Config>
 {
      public override string Name => "EffectKeeper";
-     public override string Prefix => Name;
      public override string Author => "@misfiy";
-     public override Version Version => new(1, 0, 5);
-     public override PluginPriority Priority => PluginPriority.Default;
-     public static Plugin Instance;
+     public override Version Version => new(1, 0, 6);
+     public override Version RequiredExiledVersion => new(8, 3, 7);
+     public static Plugin Instance { get; private set; } = null!;
      private Harmony harmony = new("EffectKeeper");
      public override void OnEnabled()
      {
