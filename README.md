@@ -1,6 +1,5 @@
 # Effects Keeper (EXILED) ![Downloads](https://img.shields.io/github/downloads/Misfiy/EffectKeeper/total)
 * Effects Keeper is a plugin designed for EXILED, allowing server administrators to customize and control which effects or effect categories persist when players change roles, such as by escaping.
-* Choose specific effects or entire effect categories to remain active during role changes.
 
 # Installation
 * Download the latest release from the Releases page.
