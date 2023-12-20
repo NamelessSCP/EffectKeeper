@@ -3,7 +3,7 @@
 
 # Installation
 * Download the latest release from the Releases page.
-* Place the downloaded EffectsKeeper.dll file in your EXILED Plugins fold
+* Place the downloaded EffectsKeeper.dll file in your EXILED Plugins folder
 
 # Support
 * For any issues create an issue or contact me on [Discord](https://discord.gg/RYzahv3vfC).
