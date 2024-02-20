@@ -11,15 +11,17 @@ using PlayerRoles;
 internal static class EffectsControllerPatch
 {
 	private static Config config = Plugin.Instance.Config;
+
 	private static bool Prefix(PlayerEffectsController __instance, ReferenceHub targetHub, PlayerRoleBase oldRole, PlayerRoleBase newRole)
 	{
 		if (targetHub != __instance._hub) return false;
-		
-		bool isDead = (oldRole.Team == Team.Dead || newRole.Team == Team.Dead) && config.DeathDisablesEffects;
-		
+
+		bool cancel = config.CancellingRoles.Contains(oldRole.RoleTypeId) ||
+		              config.CancellingRoles.Contains(newRole.RoleTypeId);
+
 		foreach (StatusEffectBase statusEffectBase in __instance.AllEffects)
 		{
-			if (isDead)
+			if (cancel)
 			{
 				statusEffectBase.OnDeath(oldRole);
 				continue;
