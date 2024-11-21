@@ -14,7 +14,8 @@
     {
         private static Config config => EffectKeeper.Instance.Config;
 
-        private static bool Prefix(PlayerEffectsController __instance,
+        private static bool Prefix(
+            PlayerEffectsController __instance,
             ReferenceHub targetHub,
             PlayerRoleBase oldRole,
             PlayerRoleBase newRole)
