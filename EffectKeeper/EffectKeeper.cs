@@ -21,14 +21,14 @@
 #if EXILED
         public override string Name { get; } = "EffectKeeper";
         public override string Author { get; } = "@misfiy";
-        public override Version Version { get; } = new(1, 1, 1);
+        public override Version Version { get; } = new(1, 2, 0);
 
         public override void OnEnabled()
 #else
         [PluginConfig]
         public Config Config; 
         
-        [PluginEntryPoint("EffectKeeper", "1.1.1", "Keeps your effects on escape,", "@misfiy")]
+        [PluginEntryPoint("EffectKeeper", "1.2.0", "Keeps your effects on escape,", "@misfiy")]
         public void OnEnabled()
 #endif
         {
