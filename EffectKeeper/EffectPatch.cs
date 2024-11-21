@@ -1,4 +1,4 @@
-﻿namespace EffectKeeperRework 
+﻿namespace EffectKeeper 
 {
     using CustomPlayerEffects;
     using HarmonyLib;

@@ -11,6 +11,10 @@
         <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'NWAPI' ">
+        <TargetName>EffectKeeper-NW</TargetName>
+    </PropertyGroup>
+
     <ItemGroup>
         <PackageReference Condition=" '$(Configuration)' == 'EXILED' " Include="ExMod.Exiled" Version="8.14.1" />
         <PackageReference Condition=" '$(Configuration)' == 'NWAPI' " Include="Northwood.PluginAPI" Version="13.1.2" />

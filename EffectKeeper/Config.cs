@@ -1,4 +1,4 @@
-﻿namespace EffectKeeperRework
+﻿namespace EffectKeeper
 {
 #if EXILED
     using Exiled.API.Interfaces;
