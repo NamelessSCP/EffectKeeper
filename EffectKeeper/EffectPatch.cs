@@ -39,13 +39,13 @@
                     continue;
 
                 EffectCategory categories = effectType.GetCategories();
-                if (!config.KeepEffects.Contains(effectType) && !config.KeepCategories.Any(c => categories.HasFlag(c)))
+                if (!config.AllowedEffects.Contains(effectType) && !config.AllowedCategories .Any(c => categories.HasFlag(c)))
                     shouldCancel = true;
 #else
-                if (!config.KeepEffects.Contains(statusEffectBase.name))
+                if (!config.AllowedEffects.Contains(statusEffectBase.name))
                     shouldCancel = true;
                 
-                if (!config.KeepCategories.Contains(statusEffectBase.Classification))
+                if (!config.AllowedCategories.Contains(statusEffectBase.Classification))
                     shouldCancel = true;
 #endif
                 if (shouldCancel)

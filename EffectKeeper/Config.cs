@@ -19,23 +19,23 @@
         public bool DeathCancels { get; set; } = true;
 
 #if EXILED
-        public List<EffectType> KeepEffects { get; set; } = new()
+        public List<EffectType> AllowedEffects { get; set; } = new()
         {
             EffectType.Scp207,
         };
 
-        public List<EffectCategory> KeepCategories { get; set; } = new()
+        public List<EffectCategory> AllowedCategories { get; set; } = new()
         {
             EffectCategory.Movement,
             EffectCategory.Positive,
         };
 #else
-        public List<string> KeepEffects { get; set; } = new()
+        public List<string> AllowedEffects { get; set; } = new()
         {
             "Scp207",
         };
         
-        public List<StatusEffectBase.EffectClassification> KeepCategories { get; set; } = new()
+        public List<StatusEffectBase.EffectClassification> AllowedCategories { get; set; } = new()
         {
             StatusEffectBase.EffectClassification.Positive,
         };
