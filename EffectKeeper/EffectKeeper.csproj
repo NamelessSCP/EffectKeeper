@@ -11,10 +11,6 @@
         <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(Configuration)' == 'LABAPI' ">
-        <TargetName>EffectKeeper-NW</TargetName>
-    </PropertyGroup>
-
     <ItemGroup Condition=" '$(Configuration)' == 'EXILED' ">
         <PackageReference Include="ExMod.Exiled" Version="9.5.0" />
     </ItemGroup>

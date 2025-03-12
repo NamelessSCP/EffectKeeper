@@ -8,7 +8,7 @@ using PlayerRoles;
     using Exiled.API.Enums;
     using Exiled.API.Extensions;
 #endif
-    
+
 [HarmonyPatch(typeof(PlayerEffectsController), nameof(PlayerEffectsController.OnRoleChanged))]
 public static class EffectPatch
 {
