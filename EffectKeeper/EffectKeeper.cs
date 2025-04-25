@@ -16,11 +16,11 @@ public class EffectKeeper : Plugin<Config>
         
     public override string Name => "EffectKeeper";
     public override string Author => "@misfiy";
-    public override Version Version => new(1, 2, 0);
+    public override Version Version => new(2, 0, 0);
     
     #if LABAPI
     public override string Description => "Allow keeping effects on role changes";
-    public override Version RequiredApiVersion => new(1, 0, 0);
+    public override Version RequiredApiVersion => new(LabApi.Features.LabApiProperties.CompiledVersion);
 #endif
 
 #if EXILED
