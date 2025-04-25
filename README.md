@@ -3,7 +3,7 @@
 
 # Installation
 * Download the latest release from the Releases page.
-* Place the downloaded EffectKeeper.dll (EXILED) or EffectKeeper-NW.dll (NWAPI) file in your Plugins folder
+* Place the downloaded EffectKeeper.Exiled.dll or EffectKeeper.LabApi.dll file in your Plugins folder (choose the one for the framework you want it on)
 
 # Support
 * For any issues create an [Issue](https://github.com/NamelessSCP/EffectKeeper/issues/new) or contact me on [Discord](https://discord.gg/RYzahv3vfC).

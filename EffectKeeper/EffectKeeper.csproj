@@ -7,8 +7,16 @@
         <PlatformTarget>AnyCPU</PlatformTarget>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Optimize>true</Optimize>
-        <Configurations>EXILED;NWAPI</Configurations>
+        <Configurations>EXILED;LABAPI</Configurations>
         <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'EXILED'">
+        <AssemblyName>EffectKeeper.Exiled</AssemblyName>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == 'LABAPI'">
+        <AssemblyName>EffectKeeper.LabApi</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup Condition=" '$(Configuration)' == 'EXILED' ">
