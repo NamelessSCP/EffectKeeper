@@ -1,22 +1,22 @@
-﻿namespace EffectKeeper
-{
+﻿namespace EffectKeeper;
+
 #if EXILED
     using Exiled.API.Interfaces;
     using Exiled.API.Enums;
 #else
-    using CustomPlayerEffects;
+using CustomPlayerEffects;
 #endif
     
 #if EXILED
     public class Config : IConfig
 #else
-    public class Config
+public class Config
 #endif
-    {
-        public bool IsEnabled { get; set; } = true;
-        public bool Debug { get; set; }
+{
+    public bool IsEnabled { get; set; } = true;
+    public bool Debug { get; set; }
 
-        public bool DeathCancels { get; set; } = true;
+    public bool DeathCancels { get; set; } = true;
 
 #if EXILED
         public List<EffectType> AllowedEffects { get; set; } = new()
@@ -30,15 +30,14 @@
             EffectCategory.Positive,
         };
 #else
-        public List<string> AllowedEffects { get; set; } = new()
-        {
-            "Scp207",
-        };
+    public List<string> AllowedEffects { get; set; } = new()
+    {
+        "Scp207",
+    };
         
-        public List<StatusEffectBase.EffectClassification> AllowedCategories { get; set; } = new()
-        {
-            StatusEffectBase.EffectClassification.Positive,
-        };
+    public List<StatusEffectBase.EffectClassification> AllowedCategories { get; set; } = new()
+    {
+        StatusEffectBase.EffectClassification.Positive,
+    };
 #endif
-    }
 }
