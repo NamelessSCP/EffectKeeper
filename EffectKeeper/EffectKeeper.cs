@@ -16,8 +16,8 @@ public class EffectKeeper : Plugin<Config>
         
     public override string Name => "EffectKeeper";
     public override string Author => "@misfiy";
-    public override Version Version => new(2, 0, 0);
-    
+    public override Version Version => new(2, 0, 1);
+
     #if LABAPI
     public override string Description => "Allow keeping effects on role changes";
     public override Version RequiredApiVersion => new(LabApi.Features.LabApiProperties.CompiledVersion);
@@ -29,9 +29,6 @@ public class EffectKeeper : Plugin<Config>
     public override void Enable()
 #endif
     {
-        if (!Config!.IsEnabled)
-            return;
-
         Instance = this;
         _harmony = new Harmony("EffectKeeper-" + DateTime.Now);
         _harmony.PatchAll();

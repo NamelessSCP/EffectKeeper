@@ -1,4 +1,6 @@
-﻿namespace EffectKeeper;
+﻿using System.ComponentModel;
+
+namespace EffectKeeper;
 
 #if EXILED
     using Exiled.API.Interfaces;
@@ -13,8 +15,10 @@ using CustomPlayerEffects;
 public class Config
 #endif
 {
+#if EXILED
     public bool IsEnabled { get; set; } = true;
     public bool Debug { get; set; }
+#endif
 
     public bool DeathCancels { get; set; } = true;
 
@@ -29,6 +33,14 @@ public class Config
             EffectCategory.Movement,
             EffectCategory.Positive,
         };
+
+        [Description("These effects are considered bugged upon changing role - it is not recommended to modify this!")]
+        public List<EffectType> ReapplyEffects { get; set; } = new()
+        {
+            EffectType.AntiScp207,
+            EffectType.Ghostly,
+            EffectType.Scp1344,
+        };
 #else
     public List<string> AllowedEffects { get; set; } = new()
     {
@@ -38,6 +50,14 @@ public class Config
     public List<StatusEffectBase.EffectClassification> AllowedCategories { get; set; } = new()
     {
         StatusEffectBase.EffectClassification.Positive,
+    };
+
+    [Description("These effects are considered bugged upon changing role - it is not recommended to modify this!")]
+    public List<string> ReapplyEffects { get; set; } = new()
+    {
+        nameof(Scp1344),
+        nameof(AntiScp207),
+        nameof(Ghostly),
     };
 #endif
 }
